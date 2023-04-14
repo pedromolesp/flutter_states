@@ -9,6 +9,7 @@ class Pagina2Page extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
               onPressed: () {},
