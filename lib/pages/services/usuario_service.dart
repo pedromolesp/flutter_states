@@ -17,6 +17,12 @@ class UsuarioService with ChangeNotifier {
   }
 
   void cambiarEdad(int edad) {
-    usuario?.edad = edad;
+    if (existeUsuario) usuario?.edad = edad;
+    notifyListeners();
+  }
+
+  void eliminarUsuario() {
+    _usuario = null;
+    notifyListeners();
   }
 }
