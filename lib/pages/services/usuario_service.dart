@@ -11,6 +11,11 @@ class UsuarioService with ChangeNotifier {
     _usuario = usuario;
   }
 
+  set usuario(Usuario? user) {
+    _usuario = user;
+    notifyListeners();
+  }
+
   void cambiarEdad(int edad) {
     usuario?.edad = edad;
   }
