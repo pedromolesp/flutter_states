@@ -9,7 +9,9 @@ class Pagina2Page extends StatelessWidget {
     final usuarioService = Provider.of<UsuarioService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Página 2"),
+        title: usuarioService.existeUsuario
+            ? Text('Nombre: ${usuarioService.usuario?.nombre}')
+            : Text('Página 2'),
       ),
       body: Center(
         child: Column(
