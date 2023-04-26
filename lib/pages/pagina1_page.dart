@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:programacion/models/usuario.dart';
 import 'package:programacion/pages/services/usuario_service.dart';
+import 'package:provider/provider.dart';
 
 class Pagina1Page extends StatelessWidget {
   const Pagina1Page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final usuarioService = Provider.of<UsuarioService>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Página 1"),
