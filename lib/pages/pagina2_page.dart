@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:programacion/models/usuario.dart';
 import 'package:programacion/pages/services/usuario_service.dart';
+import 'package:provider/provider.dart';
 
 class Pagina2Page extends StatelessWidget {
   @override
@@ -15,10 +16,14 @@ class Pagina2Page extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () {
-                // usuarioService.cargarUsuario(Usuario(
-                //     nombre: 'Pedro Molina',
-                //     edad: 32,
-                //     profesiones: ['Programador', 'Cabrero']));
+                final usuarioService =
+                    Provider.of<UsuarioService>(context, listen: false);
+
+                usuarioService.usuario = Usuario(
+                  nombre: 'Pedro',
+                  edad: 18,
+                  profesiones: ['programadior', 'dior'],
+                );
               },
               color: Colors.blue,
               child: const Text(
