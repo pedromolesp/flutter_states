@@ -12,6 +12,14 @@ class Pagina1Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Página 1"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              usuarioService.eliminarUsuario();
+            },
+            icon: const Icon(Icons.exit_to_app),
+          )
+        ],
       ),
       body: usuarioService.existeUsuario
           ? InformacionUsuario(
@@ -29,7 +37,7 @@ class Pagina1Page extends StatelessWidget {
 }
 
 class InformacionUsuario extends StatelessWidget {
-  const InformacionUsuario({Key? key, required this.usuario}) : super(key: key);
+  const InformacionUsuario({super.key, required this.usuario});
   final Usuario? usuario;
   @override
   Widget build(BuildContext context) {

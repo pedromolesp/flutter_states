@@ -6,9 +6,12 @@ import 'package:provider/provider.dart';
 class Pagina2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final usuarioService = Provider.of<UsuarioService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Página 2"),
+        title: usuarioService.existeUsuario
+            ? Text('Nombre: ${usuarioService.usuario?.nombre}')
+            : Text('Página 2'),
       ),
       body: Center(
         child: Column(
@@ -16,9 +19,6 @@ class Pagina2Page extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () {
-                final usuarioService =
-                    Provider.of<UsuarioService>(context, listen: false);
-
                 usuarioService.usuario = Usuario(
                   nombre: 'Pedro',
                   edad: 18,
@@ -33,7 +33,7 @@ class Pagina2Page extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-                // usuarioService.cambiarEdad(30);
+                usuarioService.cambiarEdad(30);
               },
               color: Colors.blue,
               child: const Text(
