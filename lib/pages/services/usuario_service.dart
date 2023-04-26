@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:programacion/models/usuario.dart';
 
-class _UsuarioService {
+class UsuarioService with ChangeNotifier {
   Usuario? _usuario;
 
   Usuario? get usuario => _usuario;
@@ -14,5 +15,3 @@ class _UsuarioService {
     usuario?.edad = edad;
   }
 }
-
-final usuarioService = _UsuarioService();

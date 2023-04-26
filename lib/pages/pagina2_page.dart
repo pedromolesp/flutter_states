@@ -15,10 +15,10 @@ class Pagina2Page extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () {
-                usuarioService.cargarUsuario(Usuario(
-                    nombre: 'Pedro Molina',
-                    edad: 32,
-                    profesiones: ['Programador', 'Cabrero']));
+                // usuarioService.cargarUsuario(Usuario(
+                //     nombre: 'Pedro Molina',
+                //     edad: 32,
+                //     profesiones: ['Programador', 'Cabrero']));
               },
               color: Colors.blue,
               child: const Text(
@@ -28,7 +28,7 @@ class Pagina2Page extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-                usuarioService.cambiarEdad(30);
+                // usuarioService.cambiarEdad(30);
               },
               color: Colors.blue,
               child: const Text(
