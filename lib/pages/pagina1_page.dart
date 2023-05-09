@@ -64,15 +64,11 @@ class InformacionUsuario extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const Divider(),
-          const ListTile(
-            title: Text('profesion 1: '),
-          ),
-          const ListTile(
-            title: Text('profesion 2: '),
-          ),
-          const ListTile(
-            title: Text('profesion 3: '),
-          ),
+          ...usuario!.profesiones.map(
+            (p) => ListTile(
+              title: Text(p),
+            ),
+          )
         ],
       ),
     );
